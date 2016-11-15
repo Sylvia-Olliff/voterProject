@@ -1,0 +1,45 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+.vertical-divider {
+	border-right-width: 1px;
+	border-right-color: #0919B4;
+}
+
+.header-padding {
+	padding-top: 25px;
+}
+
+.position-padding {
+	padding-bottom: 10px;
+}
+
+.footer-padding {
+	padding-bottom: 18%;
+}
+
+.test-bg {
+	background: url(img/wavingflag.jpg);
+}
+
+.trump-hair {
+	font-color: #F57402;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

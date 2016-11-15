@@ -1,0 +1,22 @@
+{
+  "name": "voter-tool",
+  "version": "1.0.0",
+  "description": "This is the front interface for the anonymous voting system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Joe Olliff, Alisha Smalls",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.1.2",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "morgan": "^1.7.0",
+    "mysql": "^2.12.0"
+  }
+}
