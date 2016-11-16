@@ -1,5 +1,6 @@
 //main routes file
 var controllerExample = require('./controllers/electionController.js');
+var dataController = require('./controllers/dataController.js');
 
 
 module.exports = function(args) {
@@ -15,6 +16,10 @@ module.exports = function(args) {
 	app.get('/', function(req, res) {
 		res.render(__dirname + "/views/index.ejs");
 	});
+
+	app.get('/testSQL', dataController.getElectionData, function(req, res) {
+		res.semd("test complete");
+	})
 
 	app.get('/elections', controllerExample.getElection, function(req, res) {
 		res.render(__dirname + "/views/elections.ejs", {federal: req.federal}, function(err, html) {
