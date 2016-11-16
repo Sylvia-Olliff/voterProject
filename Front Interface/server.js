@@ -5,10 +5,7 @@ var app      	 = express();
 var server   	 = require('http').createServer(app);
 var port 	 	 = 8888;
 var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var mysql 		 = require('mysql');
-var connData     = require('./config/database.js');
-var connection   = mysql.createConnection(connData);
+var bodyParser   = require('body-parser');;
 var morgan 		 = require('morgan');
 
 
@@ -24,8 +21,7 @@ app.set('view engine', 'ejs');
 
 var args  = {
 	app: app,
-	express: express,
-	connection: connection
+	express: express
 }
 require(__dirname + "/app/routes.js")(args);
 

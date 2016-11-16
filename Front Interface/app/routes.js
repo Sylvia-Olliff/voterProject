@@ -6,7 +6,6 @@ var dataController = require('./controllers/dataController.js');
 module.exports = function(args) {
 	var app 	= args.app;
 	var express = args.express;
-	var conn 	= args.connection;
 
 	app.use('/css', express.static(__dirname + '/views/css/'));
 	app.use('/js', express.static(__dirname + '/views/js/'));
