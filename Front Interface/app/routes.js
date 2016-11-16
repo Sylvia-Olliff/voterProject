@@ -17,7 +17,7 @@ module.exports = function(args) {
 		res.render(__dirname + "/views/index.ejs");
 	});
 
-	app.get('/testSQL', dataController.getEllectionData, function(req, res) {
+	app.get('/testSQL', dataController.getElectionData, function(req, res) {
 		res.send("test complete");
 	});
 

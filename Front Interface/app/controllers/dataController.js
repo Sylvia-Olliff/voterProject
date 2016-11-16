@@ -1,7 +1,7 @@
 
 
 module.exports = {
-	getEllectionData: function(req, res, next) {
+	getElectionData: function(req, res, next) {
 		var conn = req.connInfo;
 
 		conn.connect();
