@@ -21,6 +21,9 @@ module.exports = function(args) {
 	});
 
 	app.get('/elections', dataController.getElectionData, function(req, res) {
+		var data = req.election.data;
+		console.log(data);
+
 		res.render(__dirname + "/views/elections.ejs", {data: req.election.data}, function(err, html) {
 			if (err) {throw err;}
 
