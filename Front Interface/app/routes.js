@@ -20,8 +20,8 @@ module.exports = function(args) {
 		res.send("test complete");
 	});
 
-	app.get('/elections', controllerExample.getElection, function(req, res) {
-		res.render(__dirname + "/views/elections.ejs", {federal: req.federal}, function(err, html) {
+	app.get('/elections', dataController.getElectionData, function(req, res) {
+		res.render(__dirname + "/views/elections.ejs", {data: req.election.data}, function(err, html) {
 			if (err) {throw err;}
 
 			res.send(html);
