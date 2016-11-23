@@ -10,7 +10,7 @@
   "author": "Joe Olliff, Alisha Smalls",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.1.2",
+    "async": "^2.1.4",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.2",

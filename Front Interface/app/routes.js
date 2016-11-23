@@ -1,5 +1,5 @@
 //main routes file
-var controllerExample = require('./controllers/electionController.js');
+// var controllerExample = require('./controllers/electionController.js');
 var dataController = require('./controllers/dataController.js');
 
 
@@ -21,7 +21,7 @@ module.exports = function(args) {
 	});
 
 	app.get('/elections', dataController.getElectionData, function(req, res) {
-		var data = req.election.data;
+		var data = req.electionData;
 		console.log(data);
 
 		res.render(__dirname + "/views/elections.ejs", {data: req.election.data}, function(err, html) {
@@ -31,11 +31,11 @@ module.exports = function(args) {
 		});
 	});
 
-	app.get('/test', controllerExample.getElection, controllerExample.vote, function(req, res){
-		console.log(req.exampleVote);
-		console.log(req.exampleElection);
-		res.send("Success");
-	});
+	// app.get('/test', controllerExample.getElection, controllerExample.vote, function(req, res){
+	// 	console.log(req.exampleVote);
+	// 	console.log(req.exampleElection);
+	// 	res.send("Success");
+	// });
 
 	app.get('/*', function(req, res) {
 		res.render(__dirname + "/views/404.ejs");

@@ -7,6 +7,7 @@ var port 	 	 = 8888;
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');;
 var morgan 		 = require('morgan');
+var async		 = require('async');
 
 
 app.use(morgan('dev'));
@@ -21,7 +22,8 @@ app.set('view engine', 'ejs');
 
 var args  = {
 	app: app,
-	express: express
+	express: express,
+	async: async
 }
 require(__dirname + "/app/routes.js")(args);
 
