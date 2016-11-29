@@ -16,11 +16,15 @@ module.exports = function(args) {
 		res.render(__dirname + "/views/index.ejs");
 	});
 
-	app.get('/elections', dataController.getElectionData, function(req, res) {
+	app.get('/elections', function(req, res) {
+		res.render(__dirname + "/views/elections.ejs");
+	});
+
+	app.get('/electionsData', dataController.getElectionData, function(req, res) {
 		var data = req.electionData;
 		console.log(data);
 
-		res.render(__dirname + "/views/elections.ejs", {data: req.election.data}, function(err, html) {
+		res.render(__dirname + "/views/electionInfoSet.ejs", {data: req.election.data}, function(err, html) {
 			if (err) {throw err;}
 
 			res.send(html);
