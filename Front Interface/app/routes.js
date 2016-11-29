@@ -20,7 +20,7 @@ module.exports = function(args) {
 		res.render(__dirname + "/views/elections.ejs");
 	});
 
-	app.get('/electionsData', dataController.getElectionData, function(req, res) {
+	app.get('/electionData', dataController.getElectionData, function(req, res) {
 		var data = req.electionData;
 		console.log(data);
 

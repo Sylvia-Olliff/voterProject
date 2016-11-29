@@ -3,9 +3,21 @@ const CARD_CHECK_PASS = "Card Detected, Please Click Submit";
 
 $(document).ready(function(){
 
-	//TODO: If there is no event to tie into, check for card presence
-	//		every 10 secs. (this may require local software to be 
-	//		more effecient)
+	$.ajax({
+			type: "GET",
+			dataType: "HTML",
+			url: "electionData",
+			cache: false,
+			success: function(result) {
+				$("#fedData").html(result);
+
+			},
+			error: function(jqXHR, status, err) {
+				console.log("Error");
+				console.log(status, err);	
+			}
+		});		
+	});
 
 	$("#checkCardResponse").html();
 	//TODO: detect the presence of a card reader
