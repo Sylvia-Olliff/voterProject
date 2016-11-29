@@ -16,10 +16,6 @@ module.exports = function(args) {
 		res.render(__dirname + "/views/index.ejs");
 	});
 
-	app.get('/testSQL', dataController.getElectionData, function(req, res) {
-		res.send("test complete");
-	});
-
 	app.get('/elections', dataController.getElectionData, function(req, res) {
 		var data = req.electionData;
 		console.log(data);
@@ -30,12 +26,6 @@ module.exports = function(args) {
 			res.send(html);
 		});
 	});
-
-	// app.get('/test', controllerExample.getElection, controllerExample.vote, function(req, res){
-	// 	console.log(req.exampleVote);
-	// 	console.log(req.exampleElection);
-	// 	res.send("Success");
-	// });
 
 	app.get('/*', function(req, res) {
 		res.render(__dirname + "/views/404.ejs");
