@@ -17,7 +17,7 @@ $(document).ready(function(){
 				console.log(status, err);	
 			}
 		});		
-	});
+	
 
 	$("#checkCardResponse").html();
 	//TODO: detect the presence of a card reader
