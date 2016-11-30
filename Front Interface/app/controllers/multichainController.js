@@ -9,17 +9,19 @@ var multichain = require("multichain-node")({
 
 module.exports = {
 	putData: function(req, res, next){
-		key = req.key;
-		data = req.data;
+		key = req.mcData.bKey + "-" req.mcData.pKey;
+		data = req.mcData.name + "-" + req.mcData.pName;
 		hexData = "";
 
 		for(var i = 0; var len = data.length; i < len; i++){
 			hexData += data.charCodeAt(i).toString(16);
 		}
 
-		multichain.publish({stream: stream1, key: key, data: hexData}, (err, res) => {
-			console.log(res);
-		});
+		//TODO testing flow before actually writing to multichain
+
+		// multichain.publish({stream: stream1, key: key, data: hexData}, (err, res) => {
+		// 	console.log(res);
+		// });
 
 	}
 }

@@ -1,6 +1,7 @@
 //main routes file
 // var controllerExample = require('./controllers/electionController.js');
 var dataController = require('./controllers/dataController.js');
+var multichainController = require('./controllers/multichainController.js');
 
 
 module.exports = function(args) {
@@ -28,6 +29,10 @@ module.exports = function(args) {
 
 			res.send(html);
 		});
+	});
+
+	app.post('/voteData', dataController.translateBallot, multichainController.putData, function(req, res) {
+		res.send("Test success");
 	});
 
 	app.get('/*', function(req, res) {
