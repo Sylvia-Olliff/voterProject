@@ -8,7 +8,6 @@ var electionDataMold = require('../models/electionData.js');
 
 module.exports = {
 	getElectionData: function(req, res, next) {
-		conn.connect();
 		//This will be a join of all four table (or some combination therein)
 		conn.query("SELECT E_ID, B_KEY FROM elections WHERE E_FLAG=1", function(err, rows, fields) {
 			if (err) { throw err;}
