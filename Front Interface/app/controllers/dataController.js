@@ -30,7 +30,6 @@ module.exports = {
 
 				async.parallel(posCanFuncs, function(err, results) {
 					if(err) {throw err;}
-					conn.end();
 					req.electionData = results;
 
 					next();
