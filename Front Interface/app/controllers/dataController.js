@@ -35,6 +35,37 @@ module.exports = {
 				});
 			});
 		});
+	},
+
+	translateBallot: function(req, res, next) {
+		var ballotKey = req.body.vote;
+
+		conn.query("SELECT P_ID, C_ID FROM ballot WHERE B_KEY=" + ballotKey, function(err, rows, fields){
+			if(err) {throw err;}
+			
+			var C_ID = rows[0].C_ID;
+			var P_ID = rows[0].P_ID;
+			
+			conn.query("SELECT C_LAST_NAME, C_FIRST_NAME, C_AFFILIATION FROM candidates WHERE C_ID=" + C_ID, function(err, rows, fields) {
+				if(err) {throw err;}
+
+				var name = rows[0].C_LAST_NAME + ", " + rows[0].C_FIRST_NAME;
+
+				conn.query("SELECT P_NAME FROM positions WHERE P_ID=" + P_ID, function(err, rows, fields) {
+					if(err) {throw err;}
+
+					var pName = rows[0].P_NAME;
+
+					req.mcData = {
+						name: name,
+						pName: pName
+					}
+
+					next();
+				}); 
+			});
+
+		});
 	}
 }
 

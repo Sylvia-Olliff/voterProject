@@ -23,5 +23,9 @@ $(document).ready(function(){
 		}
 	});	
 
+	$("#nextBtn").on('click', function(evt) {
+		evt.preventDefault();
 
+		
+	});
 });
