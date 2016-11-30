@@ -19,10 +19,8 @@ $(document).ready(function(){
 
 		var clicked = $(this);
 
-		$(".voter-buttons").removeClass('voted');
-		$(".voter-buttons").prop("disabled", true);
-		clicked.addClass('voted');
-		clicked.prop("disabled", false);
+		$(".voter-buttons").removeClass('active');
+		clicked.addClass('active');
 		
 	});
 
