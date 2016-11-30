@@ -13,14 +13,14 @@ module.exports = {
 		conn.query("SELECT E_ID, B_KEY FROM elections WHERE E_FLAG=1", function(err, rows, fields) {
 			if (err) { throw err;}
 
-			conn.end();
+			// conn.end();
 			var electionID = rows[0].E_ID;
 			var ballotKey = rows[0].B_KEY;
-			conn.connect();
+			// conn.connect();
 			conn.query("SELECT P_ID, C_ID FROM ballot WHERE B_KEY=" + ballotKey, function(err, rows, fields){
 				if(err) {throw err;}
 
-				conn.end();
+				// conn.end();
 				var posCanFuncs;
 				var posCanArgs = {C_ID: rows[entry].C_ID, P_ID: rows[entry].P_ID, E_ID: electionID};
 				for(entry in rows) {
@@ -29,7 +29,7 @@ module.exports = {
 
 				async.parallel(posCanFuncs, function(err, results) {
 					if(err) {throw err;}
-
+					conn.end();
 					req.electionData = results;
 
 					next();
