@@ -7,22 +7,21 @@ $(document).ready(function(){
 		success: function(result) {
 			$("#fedData").html(result);
 
+			$(".voter-buttons").on('click', function(evt){
+				evt.preventDefault();
+
+				var clicked = $(this);
+
+				$(".voter-buttons").removeClass('active');
+				clicked.addClass('active');
+				
+			});
 		},
 		error: function(jqXHR, status, err) {
 			console.log("Error");
 			console.log(status, err);	
 		}
 	});	
-
-	$(".voter-buttons").on('click', function(evt){
-		evt.preventDefault();
-
-		var clicked = $(this);
-
-		$(".voter-buttons").removeClass('active');
-		clicked.addClass('active');
-		
-	});
 
 
 });
