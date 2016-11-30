@@ -50,7 +50,7 @@ function candidateDataQuery(args, callback) {
 		if(err) {throw err;}
 
 		// conn.end();
-		var instanceData;
+		var instanceData = [];
 		instanceData["CandidateData"] = {
 			lastName: rows[0].C_LAST_NAME,
 			firstName: rows[0].C_FIRST_NAME,
