@@ -21,10 +21,10 @@ module.exports = function(args) {
 	});
 
 	app.get('/electionData', dataController.getElectionData, function(req, res) {
-		var data = req.electionData[0];
+		var data = req.electionData;
 		console.log(data);
 
-		res.render(__dirname + "/views/electionInfoSet.ejs", {data: req.election.data}, function(err, html) {
+		res.render(__dirname + "/views/electionInfoSet.ejs", {data: data}, function(err, html) {
 			if (err) {throw err;}
 
 			res.send(html);

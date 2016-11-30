@@ -1,12 +1,12 @@
-<% for(var i = 0; i < data.data.length; i++) { %>
+<% for(var dataItem in data) { %>
   <div class="row header-padding position-padding"> <!-- position begins -->
     <div class="col-md-6">
       <div class="row"> 
         <div class="col-md-6 text-right text-info">
-          <strong><%- data.data[i].position %>:</strong>
+          <strong><%- dataItem.positionData.name %>:</strong>
         </div>
         <div class="col-md-6 text-left text-warning">
-          <strong><%- data.data[i].name %></strong>
+          <strong><%- dataItem.CandidateData.lastName %>, <%- dataItem.CandidateData.firstName %></strong>
         </div>
       </div> 
     </div>
