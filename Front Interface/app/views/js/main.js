@@ -6,6 +6,6 @@ $(document).ready(function(){
 	$("#start").on('click', function(evt){
 		evt.preventDefault();
 
-		window.location("192.168.1.13:8888/elections");
+		window.location.assign("192.168.1.13:8888/elections");
 	});
 });
