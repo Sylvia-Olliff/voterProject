@@ -21,7 +21,7 @@ module.exports = function(args) {
 	});
 
 	app.get('/electionData', dataController.getElectionData, function(req, res) {
-		var data = req.electionData;
+		var data = req.electionData[0];
 		console.log(data);
 
 		res.render(__dirname + "/views/electionInfoSet.ejs", {data: req.election.data}, function(err, html) {
