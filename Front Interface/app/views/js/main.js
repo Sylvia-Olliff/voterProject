@@ -3,23 +3,9 @@ const CARD_CHECK_PASS = "Card Detected, Please Click Submit";
 
 $(document).ready(function(){
 
-	$.ajax({
-			type: "GET",
-			dataType: "HTML",
-			url: "electionData",
-			cache: false,
-			success: function(result) {
-				$("#fedData").html(result);
+	$("#start").on('click', function(evt){
+		evt.preventDefault();
 
-			},
-			error: function(jqXHR, status, err) {
-				console.log("Error");
-				console.log(status, err);	
-			}
-		});		
-	
-
-	$("#checkCardResponse").html();
-	//TODO: detect the presence of a card reader
-	//		and inserted card. Display a message here if one is not.
+		window.location("192.168.1.13:8888/elections");
+	});
 });
