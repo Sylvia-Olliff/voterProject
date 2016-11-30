@@ -21,9 +21,10 @@ module.exports = {
 				if(err) {throw err;}
 
 				// conn.end();
-				var posCanFuncs;
-				var posCanArgs = {C_ID: rows[entry].C_ID, P_ID: rows[entry].P_ID, E_ID: electionID};
+				var posCanFuncs = [];
+				
 				for(entry in rows) {
+					var posCanArgs = {C_ID: rows[entry].C_ID, P_ID: rows[entry].P_ID, E_ID: electionID};
 					posCanFuncs.push(candidateDataQuery.bind(null, posCanArgs));
 				}
 
