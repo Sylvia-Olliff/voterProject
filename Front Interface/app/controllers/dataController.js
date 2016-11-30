@@ -44,12 +44,12 @@ function candidateDataQuery(args, callback) {
 	var C_ID = args.C_ID;
 	var P_ID = args.P_ID;
 	var E_ID = args.E_ID;
-	conn.connect();
+	// conn.connect();
 
 	conn.query("SELECT C_LAST_NAME, C_FIRST_NAME, C_AFFILIATION FROM candidates WHERE C_ID=" + C_ID, function(err, rows, fields) {
 		if(err) {throw err;}
 
-		conn.end();
+		// conn.end();
 		var instanceData;
 		instanceData["CandidateData"] = {
 			lastName: rows[0].C_LAST_NAME,
@@ -57,12 +57,12 @@ function candidateDataQuery(args, callback) {
 			affiliation: rows[0].C_AFFILIATION
 		}
 
-		conn.connect();
+		// conn.connect();
 
 		conn.query("SELECT P_NAME FROM positions WHERE P_ID=" + P_ID, function(err, rows, fields) {
 			if(err) {throw err;}
 
-			conn.end();
+			// conn.end();
 			instanceData["positionData"] = {
 				name: rows[0].P_NAME
 			}
