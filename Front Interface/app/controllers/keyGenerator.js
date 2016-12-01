@@ -6,7 +6,7 @@ module.exports = {
 	genKey: function(req, res, next) {
 		var secret = req.body.secret;
 
-		var hash = crypto.createHmac('sha256').update(secret).digest('hex');
+		var hash = crypto.createHash('sha256').update(secret).digest('hex');
 
 		req.pKey = hash;
 
@@ -14,7 +14,7 @@ module.exports = {
 	},
 
 	getKey: function(secret) {
-		var hash = crypto.createHmac('sha256').update(secret).digest('hex');
+		var hash = crypto.createHash('sha256').update(secret).digest('hex');
 
 		return hash;		
 	}
