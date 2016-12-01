@@ -25,11 +25,19 @@ module.exports = {
 		console.log("key: " + key);
 		console.log("hexData: " + hexData);
 
+		req.example = {
+			key: key,
+			hexData: hexData
+		};
+
 		//TODO testing flow before actually writing to multichain
 
 		// multichain.publish({stream: stream1, key: key, data: hexData}, (err, res) => {
 		// 	console.log(res);
+		//	next();
 		// });
+
+		next();
 
 	}
 }

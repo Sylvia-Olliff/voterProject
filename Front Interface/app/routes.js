@@ -33,7 +33,7 @@ module.exports = function(args) {
 	});
 
 	app.post('/voteData', encrypt.genKey, dataController.translateBallot, multichainController.putData, function(req, res) {
-		res.send("Test success");
+		res.send(req.example);
 	});
 
 	app.get('/*', function(req, res) {
