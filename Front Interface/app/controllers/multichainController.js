@@ -1,5 +1,6 @@
 var key = "";
 var data = "";
+//Connect to the multichain node hosted on the same VM as the webserver
 var multichain = require("multichain-node")({
 		port:6282,
 		host:'127.0.0.1',
@@ -12,15 +13,18 @@ var encrypt = require("./keyGenerator.js");
 module.exports = {
 	putData: function(req, res, next){
 
-		pKey = encrypt.getKey(req.mcData.pKey);
+		bKey = encrypt.getKey(req.mcData.bKey);
 
-		key = req.mcData.bKey + "-" pKey;
+		key = req.mcData.pKey + "-" bKey;
 		data = req.mcData.name + "-" + req.mcData.pName;
 		hexData = "";
 
 		for(var i = 0; var len = data.length; i < len; i++){
 			hexData += data.charCodeAt(i).toString(16);
 		}
+
+		//The Personal Key and ballot key should be combined and encrypted as 256bit encoded hexadecimal
+		//The data to be written should be converted straight to hexadecimal
 
 		console.log("key: " + key);
 		console.log("hexData: " + hexData);
