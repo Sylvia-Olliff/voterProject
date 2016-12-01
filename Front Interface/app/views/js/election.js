@@ -45,8 +45,8 @@ $(document).ready(function(){
 			                	url: "voteData",
 			                	data: data,
 			                	cache: false,
-			                	success: function(dialog) {
-			                		dialog.close();
+			                	success: function(dialogItself) {
+			                		dialogItself.close();
 			                	},
 			                	error: function(jqXHR, status, err) {
 			                		console.log("Error");
