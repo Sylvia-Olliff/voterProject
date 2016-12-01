@@ -7,15 +7,23 @@ var multichain = require("multichain-node")({
 		pass:"somepass"
 });
 
+var encrypt = require("./keyGenerator.js");
+
 module.exports = {
 	putData: function(req, res, next){
-		key = req.mcData.bKey + "-" req.mcData.pKey;
+
+		pKey = encrypt.getKey(req.mcData.pKey);
+
+		key = req.mcData.bKey + "-" pKey;
 		data = req.mcData.name + "-" + req.mcData.pName;
 		hexData = "";
 
 		for(var i = 0; var len = data.length; i < len; i++){
 			hexData += data.charCodeAt(i).toString(16);
 		}
+
+		console.log("key: " + key);
+		console.log("hexData: " + hexData);
 
 		//TODO testing flow before actually writing to multichain
 

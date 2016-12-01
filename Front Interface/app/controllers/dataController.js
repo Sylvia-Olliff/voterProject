@@ -38,6 +38,8 @@ module.exports = {
 	},
 
 	translateBallot: function(req, res, next) {
+		//ideally this would be an array containing all of the ids for everything the user voted for.
+		// However, for this demo the user can only vote for one postion so we are treating this as a singular.
 		var ballotID = req.body.vote;
 
 		conn.query("SELECT P_ID, C_ID, B_KEY FROM ballot WHERE B_ID=" + ballotID, function(err, rows, fields){
@@ -46,6 +48,8 @@ module.exports = {
 			var C_ID = rows[0].C_ID;
 			var P_ID = rows[0].P_ID;
 			var B_Key = rows[0].B_KEY;
+
+			var P_Key = req.pKey;
 			
 			conn.query("SELECT C_LAST_NAME, C_FIRST_NAME, C_AFFILIATION FROM candidates WHERE C_ID=" + C_ID, function(err, rows, fields) {
 				if(err) {throw err;}
@@ -58,7 +62,8 @@ module.exports = {
 					var pName = rows[0].P_NAME;
 
 					req.mcData = {
-						bKey: B_Key;
+						pKey: P_Key,
+						bKey: B_Key,
 						name: name,
 						pName: pName
 					}
