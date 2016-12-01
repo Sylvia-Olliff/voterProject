@@ -53,16 +53,12 @@ $(document).ready(function(){
 			                		console.log(status, err);
 			                	}
 			                });
-			            }
-			        	action: function(dialogItself){
+
+			            },
+			            function(dialogItself){
                     		dialogItself.close();
-                		}	
-			        },{
-			            label: 'Close',
-                		action: function(dialogItself){
-                    	dialogItself.close();
-                	}
-                }]
+                		}
+                	}]
                 });
 			});
 
