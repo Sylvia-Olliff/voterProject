@@ -47,6 +47,7 @@ $(document).ready(function(){
 			                	cache: false,
 			                	success: function(result) {
 			                		console.log(result);
+			                		BootstrapDialog.dialog('close');
 			                	},
 			                	error: function(jqXHR, status, err) {
 			                		console.log("Error");
@@ -58,9 +59,6 @@ $(document).ready(function(){
 			    });
 			});
 
-			$("btn-1").on('click', function(evt){
-				BootstrapDialog.dialog('close');
-			});
 		},
 		error: function(jqXHR, status, err) {
 			console.log("Error");
