@@ -1,12 +1,12 @@
 var key = "";
 var data = "";
 //Connect to the multichain node hosted on the same VM as the webserver
-var multichain = require("multichain-node")({
-		port:6282,
-		host:'127.0.0.1',
-		user:"multichainrpc",
-		pass:"somepass"
-});
+// var multichain = require("multichain-node")({
+// 		port:6282,
+// 		host:'127.0.0.1',
+// 		user:"multichainrpc",
+// 		pass:"somepass"
+// });
 
 var encrypt = require("./keyGenerator.js");
 
