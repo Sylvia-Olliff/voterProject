@@ -54,8 +54,12 @@ $(document).ready(function(){
 			                	}
 			                });
 			            }
-			        }]
-			    });
+			        },{
+			            label: 'Close',
+                		action: function(dialogItself){
+                    	dialogItself.close();
+                	}
+                }]
 			});
 
 		},
