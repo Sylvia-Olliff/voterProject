@@ -32,7 +32,7 @@ $(document).ready(function(){
 			        buttons: [{
 			            id: 'btn-1',
 			            label: 'Click to Submit.',
-			            action: function(dialog, dialogItself) {
+			            action: function(dialog) {
 			                dialog.setClosable(true);
 
 			                var input = dialog.getModalBody().find('input').val();
@@ -53,9 +53,13 @@ $(document).ready(function(){
 			                		console.log(status, err);
 			                	}
 			                });
-			                dialogItself.close();
 			            }
 			        }]
+			        $("#btn-1").on('click', function(evt){
+						evt.preventDefault();
+
+						window.location.href="http://192.168.1.13:8888/";
+					});
 			    });
 			});
 
