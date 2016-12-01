@@ -45,8 +45,8 @@ $(document).ready(function(){
 			                	url: "voteData",
 			                	data: data,
 			                	cache: false,
-			                	success: function(result) {
-			                		console.log(result);
+			                	success: function(dialog) {
+			                		dialog.close();
 			                	},
 			                	error: function(jqXHR, status, err) {
 			                		console.log("Error");
@@ -55,11 +55,6 @@ $(document).ready(function(){
 			                });
 			            }
 			        }]
-			        $("#btn-1").on('click', function(evt){
-						evt.preventDefault();
-
-						window.location.href="http://192.168.1.13:8888/";
-					});
 			    });
 			});
 
