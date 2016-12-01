@@ -45,8 +45,8 @@ $(document).ready(function(){
 			                	url: "voteData",
 			                	data: data,
 			                	cache: false,
-			                	success: function(dialogItself) {
-			                		dialogItself.close();
+			                	success: function(result) {
+			                		console.log(result);
 			                	},
 			                	error: function(jqXHR, status, err) {
 			                		console.log("Error");
@@ -54,6 +54,9 @@ $(document).ready(function(){
 			                	}
 			                });
 			            }
+			        	action: function(dialogItself){
+                    		dialogItself.close();
+                		}	
 			        },{
 			            label: 'Close',
                 		action: function(dialogItself){
