@@ -6,17 +6,22 @@ module.exports = {
 	genKey: function(req, res, next) {
 		var secret = req.body.secret;
 
-		var hash = crypto.createHash('sha256').update(secret).digest('hex');
+		console.log(secret);
 
-		req.pKey = hash;
+		req.pKey = getHash(secret);
 
 		next();
 	},
 
 	getKey: function(secret) {
-		var hash = crypto.createHash('sha256').update(secret).digest('hex');
 
-		return hash;		
+		console.log(secret);
+
+		return getHash(secret);		
 	}
 
+}
+
+function getHash(secret) {
+	return crypto.createHash('sha256').update(secret).digest('hex');
 }
