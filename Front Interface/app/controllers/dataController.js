@@ -115,7 +115,7 @@ function candidateDataQuery(args, callback) {
 
 			instanceData["positionData"] = {
 				name: rows[0].P_NAME,
-				id: B_ID;
+				id: B_ID
 			}
 
 			callback(null, instanceData);
