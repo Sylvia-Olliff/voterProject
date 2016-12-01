@@ -57,6 +57,10 @@ $(document).ready(function(){
 			        }]
 			    });
 			});
+
+			$("btn-1").on('click', function(evt){
+				BootstrapDialog.close();
+			});
 		},
 		error: function(jqXHR, status, err) {
 			console.log("Error");
