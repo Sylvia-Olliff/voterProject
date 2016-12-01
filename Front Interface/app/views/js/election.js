@@ -33,7 +33,6 @@ $(document).ready(function(){
 			            id: 'btn-1',
 			            label: 'Click to Submit.',
 			            action: function(dialog) {
-			                event.preventDefault();
 			                dialog.setClosable(true);
 
 			                var input = dialog.getModalBody().find('input').val();
