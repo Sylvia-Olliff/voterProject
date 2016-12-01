@@ -54,8 +54,8 @@ $(document).ready(function(){
 			                	}
 			                });
 
-			            },
-			            function(dialogItself){
+			            };
+			            action: function(dialogItself){
                     		dialogItself.close();
                 		}
                 	}]
