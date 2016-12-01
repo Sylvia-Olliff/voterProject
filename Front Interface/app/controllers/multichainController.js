@@ -19,7 +19,7 @@ module.exports = {
 		data = req.mcData.name + "-" + req.mcData.pName;
 		hexData = "";
 
-		for(var i = 0; var len = data.length; i < len; i++){
+		for(var i = 0; i < data.length; i++){
 			hexData += data.charCodeAt(i).toString(16);
 		}
 
