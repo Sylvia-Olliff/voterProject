@@ -54,7 +54,7 @@ $(document).ready(function(){
 			                	}
 			                });
 
-			            };
+			            },
 			            action: function(dialogItself){
                     		dialogItself.close();
                 		}
