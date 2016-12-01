@@ -16,7 +16,7 @@ module.exports = {
 	},
 
 	getKey: function(secret) {
-		var hash = crypto.createHmac('256sha', secret)
+		var hash = crypto.createHmac('sha256', secret)
 						 .update(cipher)
 						 .digest('hex');
 
