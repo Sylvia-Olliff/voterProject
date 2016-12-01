@@ -47,13 +47,13 @@ $(document).ready(function(){
 			                	cache: false,
 			                	success: function(result) {
 			                		console.log(result);
-			                		BootstrapDialog.dialog('close');
 			                	},
 			                	error: function(jqXHR, status, err) {
 			                		console.log("Error");
 			                		console.log(status, err);
 			                	}
 			                });
+			                dialog.close();
 			            }
 			        }]
 			    });
