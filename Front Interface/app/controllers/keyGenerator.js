@@ -1,14 +1,12 @@
 const crypto 		 = require('crypto');
-const cipher 		 = "voterProject Rocks!"; 
+// const cipher 		 = "voterProject Rocks!"; 
 
 
 module.exports = {
 	genKey: function(req, res, next) {
 		var secret = req.body.secret;
 
-		var hash = crypto.createHmac('sha256', secret)
-						 .update(cipher)
-						 .digest('hex');
+		var hash = crypto.createHmac('sha256').update(secret).digest('hex');
 
 		req.pKey = hash;
 
@@ -16,9 +14,7 @@ module.exports = {
 	},
 
 	getKey: function(secret) {
-		var hash = crypto.createHmac('sha256', secret)
-						 .update(cipher)
-						 .digest('hex');
+		var hash = crypto.createHmac('sha256').update(secret).digest('hex');
 
 		return hash;		
 	}
