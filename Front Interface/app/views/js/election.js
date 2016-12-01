@@ -36,7 +36,9 @@ $(document).ready(function(){
 			                event.preventDefault();
 			                dialog.setClosable(true);
 
-			                var data = {secret: $("#pKey").val(), vote: $(".active").attr('id')};
+			                var input = dialog.getModalBody().find('input').val();
+
+			                var data = {secret: input, vote: $(".active").attr('id')};
 
 			                $.ajax({
 			                	type: "POST",
