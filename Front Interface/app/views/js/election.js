@@ -39,7 +39,8 @@ $(document).ready(function(){
 
 			                var data = {secret: input, vote: $(".active").attr('id')};
 
-			                dialog.close();
+			                dialog.close();			                
+							window.location.href="http://192.168.1.13:8888/";
 
 			                $.ajax({
 			                	type: "POST",
