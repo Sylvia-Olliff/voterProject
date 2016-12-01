@@ -32,7 +32,7 @@ $(document).ready(function(){
 			        buttons: [{
 			            id: 'btn-1',
 			            label: 'Click to Submit.',
-			            action: function(dialog) {
+			            action: function(dialog, dialogItself) {
 			                dialog.setClosable(true);
 
 			                var input = dialog.getModalBody().find('input').val();
@@ -53,7 +53,7 @@ $(document).ready(function(){
 			                		console.log(status, err);
 			                	}
 			                });
-			                dialog.close();
+			                dialogItself.close();
 			            }
 			        }]
 			    });
