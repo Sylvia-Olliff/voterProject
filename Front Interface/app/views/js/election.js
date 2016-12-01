@@ -59,7 +59,7 @@ $(document).ready(function(){
 			});
 
 			$("btn-1").on('click', function(evt){
-				BootstrapDialog.close();
+				BootstrapDialog.dialog('close');
 			});
 		},
 		error: function(jqXHR, status, err) {
