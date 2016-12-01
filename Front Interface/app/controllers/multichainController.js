@@ -15,7 +15,7 @@ module.exports = {
 
 		bKey = encrypt.getKey(req.mcData.bKey);
 
-		key = req.mcData.pKey + "-" bKey;
+		key = req.mcData.pKey + "-" + bKey;
 		data = req.mcData.name + "-" + req.mcData.pName;
 		hexData = "";
 
