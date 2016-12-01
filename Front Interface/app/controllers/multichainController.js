@@ -13,7 +13,7 @@ var encrypt = require("./keyGenerator.js");
 module.exports = {
 	putData: function(req, res, next){
 
-		bKey = encrypt.getKey(req.mcData.bKey);
+		bKey = encrypt.getKey("" + req.mcData.bKey);
 
 		key = req.mcData.pKey + "-" + bKey;
 		data = req.mcData.name + "-" + req.mcData.pName;
