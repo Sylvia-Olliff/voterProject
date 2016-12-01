@@ -39,6 +39,8 @@ $(document).ready(function(){
 
 			                var data = {secret: input, vote: $(".active").attr('id')};
 
+			                dialog.close();
+
 			                $.ajax({
 			                	type: "POST",
 			                	dataType: "HTML",
@@ -54,10 +56,7 @@ $(document).ready(function(){
 			                	}
 			                });
 
-			            },
-			            action: function(dialog){
-                    		dialog.close();
-                		}
+			            }
                 	}]
                 });
 			});
